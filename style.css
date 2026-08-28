@@ -328,19 +328,19 @@ p:last-child { margin-bottom: 0; }
 
 .project-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 5px;
 }
-.project-name {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 600;
-  color: var(--ink);
-  letter-spacing: -.005em;
+/* Official wordmarks stand in for the project title. Both are transparent
+   PNGs, so they sit on either theme without a plate behind them. */
+.project-logo {
+  height: 20px;
+  width: auto;
+  display: block;
+  flex: none;
 }
-.project:hover .project-name { color: var(--accent); }
 .project-stars {
   font-size: 12px;
   color: var(--ink-faint);
@@ -462,6 +462,8 @@ footer {
 /* ------------------------------------------------------------ responsive */
 
 @media (max-width: 640px) {
+  .project-logo { height: 17px; }
+  .project-role { margin-left: 0; width: 100%; }
   .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 36px; }
   .portrait { width: 122px; height: 146px; }
   .hero h1 { font-size: 28px; }

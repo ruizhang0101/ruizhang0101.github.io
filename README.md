@@ -12,6 +12,8 @@ Push to `main` and GitHub Pages serves it.
 | `index.html` | The entire site. All content lives here, section by section. |
 | `style.css`  | All styling. Design tokens are the `--*` variables at the top. |
 | `assets/profile.jpg` | Headshot. Replace with your own; portrait crop, ~450×540 or larger. |
+| `assets/lmcache-logo.png` | LMCache wordmark, used as the project card title. |
+| `assets/production-stack-logo.png` | vLLM Production Stack wordmark, same role. |
 
 
 The header's **CV** button points back at this page (`#top`) rather than a PDF. To swap in a
