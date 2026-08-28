@@ -25,7 +25,6 @@
     <a class="nav-name" href="#top">Rui Zhang</a>
     <a href="#about">About</a>
     <a href="#news">News</a>
-    <a href="#research">Research</a>
     <a href="#projects">Open Source</a>
     <a href="#publications">Publications</a>
     <a href="#services">Services</a>
@@ -70,86 +69,43 @@
     <h2>About</h2>
     <div class="prose">
       <p>
-        I am a Computer Science Ph.D. student at the <strong>University of California, Santa
-        Cruz</strong>, advised by <a href="https://users.soe.ucsc.edu/~litinghu/">Liting Hu</a>.
-        I build <strong>systems for machine learning</strong>, with a focus on the serving and
-        inference layer: how to make large language models fast, cheap, and predictable when they
-        are run at scale.
-      </p>
-      <p>
-        Most of my recent work sits around the <strong>KV cache</strong> — the piece of state that
-        decides whether an LLM request costs a full prefill or almost nothing. I care especially
-        about <strong>agentic workloads</strong>, where a single user task fans out into many
-        interacting agents, tool calls, and multi-turn contexts, and where the cache access
-        patterns look nothing like the single-chat case that today's serving stacks were tuned for.
-      </p>
-      <p>
-        Alongside my Ph.D. I am a founding engineer at <a href="https://www.tensormesh.ai">Tensormesh</a>,
-        where the same questions show up with production traffic attached. Before graduate school I
-        spent a year at <strong>Huawei</strong> as a software engineer, and interned at
-        <strong>Bosch</strong> and HUST's <a href="http://grid.hust.edu.cn/">CGCL</a> lab.
-      </p>
-      <p>
-        I work closely with <a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a>,
+        I&rsquo;m a Computer Science Ph.D. student at
+        <a href="https://engineering.ucsc.edu">UC Santa Cruz</a>, advised by
+        <a href="https://users.soe.ucsc.edu/~litinghu/">Liting Hu</a>. I&rsquo;m also a founding
+        engineer at <a href="https://www.tensormesh.ai">Tensormesh</a>, and I work closely with
+        <a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a>,
         <a href="https://yuhanliu11.github.io/">Yuhan Liu</a>, and
-        <a href="https://kuntaidu.github.io/">Kuntai Du</a> at the University of Chicago, and I am
-        a contributor to <a href="https://github.com/LMCache/LMCache">LMCache</a> and the
-        <a href="https://github.com/vllm-project/production-stack">vLLM production stack</a>.
+        <a href="https://kuntaidu.github.io/">Kuntai Du</a> at the University of Chicago.
       </p>
-    </div>
-
-    <div class="vitae">
-      <div>
-        <h3>Education</h3>
-        <ol>
-          <li>
-            <span class="v-role">Ph.D., Computer Science &amp; Engineering</span>
-            <span class="v-org"><a href="https://engineering.ucsc.edu">University of California, Santa Cruz</a></span>
-            <span class="v-date">Sep 2024 &ndash; Present</span>
-          </li>
-          <li>
-            <span class="v-role">B.Eng., Computer Science</span>
-            <span class="v-org"><a href="https://hust.edu.cn/">Huazhong University of Science and Technology</a></span>
-            <span class="v-date">Sep 2019 &ndash; Jun 2023</span>
-          </li>
-          <li>
-            <span class="v-role">Summer School, Computer Science</span>
-            <span class="v-org"><a href="https://www.nus.edu.sg/">National University of Singapore</a></span>
-            <span class="v-date">May 2020 &ndash; Aug 2020</span>
-          </li>
-        </ol>
-      </div>
-
-      <div>
-        <h3>Experience</h3>
-        <ol>
-          <li>
-            <span class="v-role">Founding Engineer</span>
-            <span class="v-org"><a href="https://www.tensormesh.ai">Tensormesh</a></span>
-            <span class="v-date">Sep 2025 &ndash; Present</span>
-          </li>
-          <li>
-            <span class="v-role">Open-Source Developer</span>
-            <span class="v-org"><a href="https://github.com/LMCache/LMCache">LMCache</a> &amp; <a href="https://github.com/vllm-project/production-stack">vLLM Production Stack</a></span>
-            <span class="v-date">Jun 2025 &ndash; Sep 2025</span>
-          </li>
-          <li>
-            <span class="v-role">Software Development Engineer</span>
-            <span class="v-org"><a href="https://www.huawei.com/en/">Huawei</a></span>
-            <span class="v-date">Aug 2023 &ndash; Aug 2024</span>
-          </li>
-          <li>
-            <span class="v-role">Research Intern</span>
-            <span class="v-org"><a href="https://www.bosch.com/">Bosch</a></span>
-            <span class="v-date">Jul 2022 &ndash; Dec 2022</span>
-          </li>
-          <li>
-            <span class="v-role">Research Intern</span>
-            <span class="v-org"><a href="http://grid.hust.edu.cn/">CGCL Lab</a>, HUST</span>
-            <span class="v-date">Feb 2021 &ndash; Dec 2022</span>
-          </li>
-        </ol>
-      </div>
+      <p>
+        Agent infrastructure today throws away the thing that makes agents agents. Execution
+        semantics and state &mdash; what an agent is doing, what it did before, what it will need
+        next &mdash; get flattened into independent chat turns at the framework boundary. My goal is
+        to make those <strong>first-class systems abstractions</strong>: once a system can expose and
+        learn agent semantics, it can make far better decisions about resource scheduling, state
+        management, computational reuse, and eventually large-scale agent learning.
+      </p>
+      <p>I&rsquo;ve worked on:</p>
+      <ul class="interests">
+        <li>learning agent execution to manage state
+          (<a href="https://arxiv.org/abs/2608.14624">KV-cache eviction and prefetching</a>,
+          <a href="https://arxiv.org/abs/2512.14946">joint compression and eviction</a>,
+          <a href="https://arxiv.org/abs/2605.17613">lossless compressed decoding</a>)</li>
+        <li>runtimes that expose agent semantics
+          (<a href="https://arxiv.org/abs/2605.27744">policy-driven serving layer</a>,
+          <a href="https://github.com/LMCache/LMCache">LMCache</a>)</li>
+        <li>resource management across agents (fairness for multi-modal and multi-agent
+          applications, <a href="https://github.com/vllm-project/production-stack">vLLM production
+          stack</a>)</li>
+      </ul>
+      <p style="margin-top:16px">
+        Previously, I was a software engineer at <a href="https://www.huawei.com/en/">Huawei</a>,
+        and a research intern at <a href="https://www.bosch.com/">Bosch</a> and at HUST&rsquo;s
+        <a href="http://grid.hust.edu.cn/">CGCL</a> lab. I graduated with a B.Eng. in computer
+        science from <a href="https://hust.edu.cn/">Huazhong University of Science and
+        Technology</a>, and spent a summer at the
+        <a href="https://www.nus.edu.sg/">National University of Singapore</a>.
+      </p>
     </div>
   </section>
 
@@ -183,42 +139,6 @@
   </section>
 
   <!-- ======================================================== RESEARCH -->
-  <section id="research">
-    <h2>Research</h2>
-    <div class="prose">
-      <p class="thesis">
-        Next-generation agent infrastructure should treat <strong>agent execution semantics and
-        state as first-class systems abstractions</strong>. By exposing and learning these
-        semantics, systems can make better decisions about resource scheduling, state management,
-        computational reuse, and eventually large-scale agent learning.
-      </p>
-      <p>
-        That is my dissertation direction. Serving stacks today treat every request as an
-        independent chat turn, and agentic systems break the assumption: work arrives as structured,
-        repeating execution graphs, contexts are shared and re-entered across turns, and the useful
-        unit of reuse is a <em>span of agent state</em>, not a token prefix. The semantics that would
-        let a system act on any of this are thrown away at the framework boundary. I am building the
-        layer that keeps them.
-      </p>
-      <p>
-        Three threads of recent work make up that direction:
-      </p>
-      <ul class="interests">
-        <li><strong>Multi-agent resource management.</strong> Sharing an inference cluster across
-          multi-modal and multi-agent applications without starving any of them &mdash; fairness and
-          isolation once a single user task expands into many concurrent agents.</li>
-        <li><strong>Agentic LLM serving runtimes.</strong> A policy-driven runtime layer between
-          framework and engine that can observe, score, predict, and act on agent execution,
-          enabling caching, batch shaping, speculation, and safety policies that know what the
-          application is actually doing.</li>
-        <li><strong>Learning agent execution for KV-cache management.</strong> Inferring agent
-          transition structure online &mdash; no workflow graph, no offline training &mdash; and using
-          it to drive eviction, prefetching, compression, and tiering instead of recency
-          heuristics.</li>
-      </ul>
-    </div>
-  </section>
-
   <!-- ==================================================== OPEN SOURCE -->
   <section id="projects">
     <h2>Open Source</h2>
