@@ -207,7 +207,8 @@ p:last-child { margin-bottom: 0; }
   margin-top: 16px;
 }
 
-.links a {
+.links a,
+.links span {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -226,6 +227,8 @@ p:last-child { margin-bottom: 0; }
   background: var(--accent-wash);
   text-decoration: none;
 }
+.links span { cursor: default; }
+
 .links svg { width: 13px; height: 13px; fill: currentColor; flex: none; }
 
 /* --------------------------------------------------------------- prose -- */
