@@ -401,14 +401,16 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 .pub:last-child { margin-bottom: 0; }
 
+/* contain, not cover: these are architecture diagrams, and cropping one
+   cuts the mechanism out of the picture. */
 .pub-fig {
-  width: 148px;
-  height: 96px;
-  object-fit: cover;
-  object-position: center top;
+  width: 152px;
+  height: 100px;
+  object-fit: contain;
+  padding: 5px;
   border: 1px solid var(--rule-strong);
   border-radius: 7px;
-  background: var(--bg);
+  background: #fff;
   display: block;
 }
 
@@ -507,7 +509,7 @@ footer {
   .news-item { flex-direction: column; gap: 3px; }
   .pub-group { grid-template-columns: 1fr; }
   .pub { grid-template-columns: 1fr; gap: 10px; }
-  .pub-fig { width: 100%; height: 150px; }
+  .pub-fig { width: 100%; height: 170px; }
   .pub-year {
     grid-row: auto;
     margin: 0 0 12px;
