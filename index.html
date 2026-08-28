@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rui Zhang</title>
+<meta name="description" content="Rui Zhang — Computer Science Ph.D. student at UC Santa Cruz, working on LLM serving systems, KV-cache management, and agentic inference.">
+<meta name="author" content="Rui Zhang">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rui Zhang">
+<meta property="og:description" content="CS Ph.D. student at UC Santa Cruz. LLM serving systems, KV-cache management, agentic inference.">
+<meta property="og:url" content="https://ruizhang0101.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Rui Zhang</a>
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Open Source</a>
+    <a href="#publications">Publications</a>
+    <a href="#services">Services</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============================================================ HERO -->
+  <header class="hero">
+    <img class="portrait" src="assets/profile.jpg" alt="Rui Zhang"
+         onerror="this.style.visibility='hidden'">
+    <div>
+      <h1>Rui Zhang</h1>
+      <p class="affil">Ph.D. Student, <strong>Computer Science &amp; Engineering</strong></p>
+      <p class="affil">University of California, Santa Cruz</p>
+      <p class="affil">Advised by <a href="https://users.soe.ucsc.edu/~litinghu/">Liting Hu</a></p>
+
+      <div class="links">
+        <a href="mailto:rzhan229@ucsc.edu">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          rzhan229@ucsc.edu
+        </a>
+        <a href="https://scholar.google.com/citations?user=jJtqLsIAAAAJ&hl=en">
+          <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM4 13.2V17c0 2.2 3.6 4 8 4s8-1.8 8-4v-3.8l-8 4.4-8-4.4z"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/ruizhang0101">
+          <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a href="assets/cv.pdf">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          CV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================== ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>
+        I am a Computer Science Ph.D. student at the <strong>University of California, Santa
+        Cruz</strong>, advised by <a href="https://users.soe.ucsc.edu/~litinghu/">Liting Hu</a>.
+        I build <strong>systems for machine learning</strong>, with a focus on the serving and
+        inference layer: how to make large language models fast, cheap, and predictable when they
+        are run at scale.
+      </p>
+      <p>
+        Most of my recent work sits around the <strong>KV cache</strong> — the piece of state that
+        decides whether an LLM request costs a full prefill or almost nothing. I care especially
+        about <strong>agentic workloads</strong>, where a single user task fans out into many
+        interacting agents, tool calls, and multi-turn contexts, and where the cache access
+        patterns look nothing like the single-chat case that today's serving stacks were tuned for.
+      </p>
+      <p>
+        I work closely with <a href="https://people.cs.uchicago.edu/~junchenj/">Junchen Jiang</a>,
+        <a href="https://yuhanliu11.github.io/">Yuhan Liu</a>, and
+        <a href="https://kuntaidu.github.io/">Kuntai Du</a> at the University of Chicago, and I am
+        a contributor to <a href="https://github.com/LMCache/LMCache">LMCache</a> and the
+        <a href="https://github.com/vllm-project/production-stack">vLLM production stack</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ NEWS -->
+  <section id="news">
+    <h2>News</h2>
+    <div class="news">
+      <dl>
+        <dt>Aug 2026</dt>
+        <dd><span class="new-tag">NEW</span><strong>CacheScout</strong> is on arXiv — learning agent
+          execution transitions online to drive KV-cache eviction and prefetching, with 10–18 pp
+          higher hit rate and up to 57% higher peak throughput on vLLM.</dd>
+
+        <dt>May 2026</dt>
+        <dd>Two preprints out: <strong>A Policy-Driven Runtime Layer for Agentic LLM Serving</strong>,
+          and <strong>VeriCache</strong>, which turns lossy KV cache into bit-exact inference.</dd>
+
+        <dt>Dec 2025</dt>
+        <dd><strong>EVICPRESS</strong> is on arXiv — jointly optimizing KV-cache eviction and
+          compression for up to 2.19× faster TTFT at equal generation quality.</dd>
+
+        <dt>Oct 2025</dt>
+        <dd>The <strong>LMCache</strong> system paper is public. LMCache is now past
+          <strong>11k stars</strong> and is the KV-cache layer behind the vLLM production stack.</dd>
+
+        <dt>Jul 2025</dt>
+        <dd>Presented <strong>Enabling Fairness Across Multi-modal and Multi-agent
+          Applications</strong> at <strong>IEEE EDGE 2025</strong>.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ======================================================== RESEARCH -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="prose">
+      <p>
+        Serving stacks today treat every request as an independent chat turn. Agentic systems break
+        that assumption: work arrives as structured, repeating execution graphs, contexts are shared
+        and re-entered across turns, and the useful unit of reuse is a <em>span of agent state</em>,
+        not a token prefix. My research asks what the serving layer should look like once it can see
+        that structure.
+      </p>
+      <ul class="interests">
+        <li><strong>KV-cache management.</strong> Eviction, prefetching, compression, and tiering
+          policies that are driven by workload semantics rather than recency heuristics.</li>
+        <li><strong>Agentic serving.</strong> A runtime layer between framework and engine that can
+          observe, score, predict, and act on agent execution — enabling cache, batching, and
+          fairness policies that know what the application is doing.</li>
+        <li><strong>Fairness and multi-tenancy.</strong> Sharing an inference cluster across
+          multi-modal and multi-agent applications without starving any of them.</li>
+        <li><strong>Lossless efficiency.</strong> Getting compression-level speedups while proving
+          the output is identical to full-cache decoding.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================== OPEN SOURCE -->
+  <section id="projects">
+    <h2>Open Source</h2>
+    <div class="projects">
+
+      <a class="project" href="https://github.com/LMCache/LMCache">
+        <div class="project-head">
+          <span class="project-name">LMCache/LMCache</span>
+          <span class="project-stars">★ 11.5k</span>
+          <span class="project-role">Contributor</span>
+        </div>
+        <p>A KV-cache layer for LLM serving. Stores and reuses KV caches across requests, engines,
+          and storage tiers (GPU / CPU / disk / remote), cutting TTFT and GPU cost for long-context
+          and multi-turn workloads. Integrated with vLLM and SGLang.</p>
+      </a>
+
+      <a class="project" href="https://github.com/vllm-project/production-stack">
+        <div class="project-head">
+          <span class="project-name">vllm-project/production-stack</span>
+          <span class="project-stars">★ 2.5k</span>
+          <span class="project-role">Contributor</span>
+        </div>
+        <p>vLLM's reference system for Kubernetes-native, cluster-wide deployment: KV-cache-aware
+          routing, autoscaling, and observability for production LLM inference.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ==================================================== PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint);margin:-8px 0 22px">
+      Full list on <a href="https://scholar.google.com/citations?user=jJtqLsIAAAAJ&hl=en">Google
+      Scholar</a>. <em>*</em> denotes equal contribution.
+    </p>
+
+    <div class="pubs">
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2608.14624">Learning Agent Execution
+            for KV-Cache Management in Agentic Serving</a></h3>
+          <p class="pub-authors"><span class="me">Rui Zhang</span>, Chaeeun Kim, Shaoting Feng,
+            Kuntai Du, Yuhan Liu, Yi Zhong, Cheng-Wei Ching, Junchen Jiang, Liting Hu</p>
+          <p class="pub-venue"><span class="badge">Preprint</span>arXiv:2608.14624, 2026</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2608.14624">abs</a>
+            <a href="https://arxiv.org/pdf/2608.14624">pdf</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2605.27744">A Policy-Driven Runtime
+            Layer for Agentic LLM Serving</a></h3>
+          <p class="pub-authors"><span class="me">Rui Zhang</span>, Chaeeun Kim, Liting Hu</p>
+          <p class="pub-venue"><span class="badge">Preprint</span>arXiv:2605.27744, 2026</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.27744">abs</a>
+            <a href="https://arxiv.org/pdf/2605.27744">pdf</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2605.17613">VeriCache: Turning Lossy
+            KV Cache into Lossless LLM Inference</a></h3>
+          <p class="pub-authors">Jiayi Yao, Samuel Shen, Kuntai Du, Shaoting Feng, Dongjoo Seo,
+            <span class="me">Rui Zhang</span>, Yuyang Huang, Yuhan Liu, Shan Lu, Junchen Jiang</p>
+          <p class="pub-venue"><span class="badge">Preprint</span>arXiv:2605.17613, 2026</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.17613">abs</a>
+            <a href="https://arxiv.org/pdf/2605.17613">pdf</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2512.14946">EvicPress: Joint KV-Cache
+            Compression and Eviction for Efficient LLM Serving</a></h3>
+          <p class="pub-authors">Shaoting Feng, Yuhan Liu, Hanchen Li, Xiaokun Chen, Samuel Shen,
+            Kuntai Du, Zhuohan Gu, <span class="me">Rui Zhang</span>, Yuyang Huang, Yihua Cheng,
+            Jiayi Yao, Qizheng Zhang, Ganesh Ananthanarayanan, Junchen Jiang</p>
+          <p class="pub-venue"><span class="badge">Preprint</span>arXiv:2512.14946, 2025</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2512.14946">abs</a>
+            <a href="https://arxiv.org/pdf/2512.14946">pdf</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2510.09665">LMCache: An Efficient
+            KV Cache Layer for Enterprise-Scale LLM Inference</a></h3>
+          <p class="pub-authors">Yuhan Liu, Yihua Cheng, Jiayi Yao, Yuwei An, Xiaokun Chen,
+            Shaoting Feng, Yuyang Huang, Samuel Shen, <span class="me">Rui Zhang</span>, Kuntai Du,
+            Junchen Jiang</p>
+          <p class="pub-venue"><span class="badge">Preprint</span>arXiv:2510.09665, 2025</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2510.09665">abs</a>
+            <a href="https://arxiv.org/pdf/2510.09665">pdf</a>
+            <a href="https://github.com/LMCache/LMCache">code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title">Enabling Fairness Across Multi-modal and Multi-agent Applications</h3>
+          <p class="pub-authors"><span class="me">Rui Zhang</span>, Liting Hu</p>
+          <p class="pub-venue"><span class="badge">IEEE EDGE 2025</span>IEEE International
+            Conference on Edge Computing and Communications, 2025</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== SERVICES -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="svc">
+
+      <div>
+        <h3>Journal Reviewing</h3>
+        <ul>
+          <li><strong>Future Generation Computer Systems</strong> (Elsevier) — Reviewer</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Teaching</h3>
+        <ul>
+          <li>Teaching Assistant, <strong>CSE 134: Embedded Operating Systems</strong> —
+            UC Santa Cruz</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Rui Zhang</span>
+  <span>Built with plain HTML &amp; CSS · hosted on GitHub Pages</span>
+</footer>
+
+</body>
+</html>
