@@ -390,8 +390,29 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   grid-row: 1 / span 99;
 }
 
-.pub { margin-bottom: 18px; }
+/* Each entry is figure + text. The <img> removes itself when the file is
+   missing, and the column collapses so the text simply reflows full width. */
+.pub {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
 .pub:last-child { margin-bottom: 0; }
+
+.pub-fig {
+  width: 148px;
+  height: 96px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--rule-strong);
+  border-radius: 7px;
+  background: var(--bg);
+  display: block;
+}
+
+.pub-text { min-width: 0; }
 
 .pub-title {
   font-family: var(--head);
@@ -485,6 +506,8 @@ footer {
   .news { grid-template-columns: 36px 1fr; }
   .news-item { flex-direction: column; gap: 3px; }
   .pub-group { grid-template-columns: 1fr; }
+  .pub { grid-template-columns: 1fr; gap: 10px; }
+  .pub-fig { width: 100%; height: 150px; }
   .pub-year {
     grid-row: auto;
     margin: 0 0 12px;
