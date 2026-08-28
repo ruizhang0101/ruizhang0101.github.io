@@ -80,7 +80,7 @@ a:hover { color: var(--accent-soft); text-decoration: underline; text-underline-
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 96%, transparent);
   backdrop-filter: saturate(1.6) blur(10px);
   -webkit-backdrop-filter: saturate(1.6) blur(10px);
   border-bottom: 1px solid var(--rule-soft);
@@ -255,7 +255,7 @@ p:last-child { margin-bottom: 0; }
 /* ---------------------------------------------------------------- news -- */
 
 .news {
-  max-height: 340px;
+  max-height: 460px;
   overflow-y: auto;
   padding-right: 8px;
   margin-right: -8px;
@@ -412,7 +412,7 @@ p:last-child { margin-bottom: 0; }
 .svc li {
   font-size: 15px;
   color: var(--ink-soft);
-  padding-left: 16px;
+  padding-left: 22px;
   position: relative;
 }
 .svc li::before {
