@@ -186,23 +186,35 @@
   <section id="research">
     <h2>Research</h2>
     <div class="prose">
+      <p class="thesis">
+        Next-generation agent infrastructure should treat <strong>agent execution semantics and
+        state as first-class systems abstractions</strong>. By exposing and learning these
+        semantics, systems can make better decisions about resource scheduling, state management,
+        computational reuse, and eventually large-scale agent learning.
+      </p>
       <p>
-        Serving stacks today treat every request as an independent chat turn. Agentic systems break
-        that assumption: work arrives as structured, repeating execution graphs, contexts are shared
-        and re-entered across turns, and the useful unit of reuse is a <em>span of agent state</em>,
-        not a token prefix. My research asks what the serving layer should look like once it can see
-        that structure.
+        That is my dissertation direction. Serving stacks today treat every request as an
+        independent chat turn, and agentic systems break the assumption: work arrives as structured,
+        repeating execution graphs, contexts are shared and re-entered across turns, and the useful
+        unit of reuse is a <em>span of agent state</em>, not a token prefix. The semantics that would
+        let a system act on any of this are thrown away at the framework boundary. I am building the
+        layer that keeps them.
+      </p>
+      <p>
+        Three threads of recent work make up that direction:
       </p>
       <ul class="interests">
-        <li><strong>KV-cache management.</strong> Eviction, prefetching, compression, and tiering
-          policies that are driven by workload semantics rather than recency heuristics.</li>
-        <li><strong>Agentic serving.</strong> A runtime layer between framework and engine that can
-          observe, score, predict, and act on agent execution — enabling cache, batching, and
-          fairness policies that know what the application is doing.</li>
-        <li><strong>Fairness and multi-tenancy.</strong> Sharing an inference cluster across
-          multi-modal and multi-agent applications without starving any of them.</li>
-        <li><strong>Lossless efficiency.</strong> Getting compression-level speedups while proving
-          the output is identical to full-cache decoding.</li>
+        <li><strong>Multi-agent resource management.</strong> Sharing an inference cluster across
+          multi-modal and multi-agent applications without starving any of them &mdash; fairness and
+          isolation once a single user task expands into many concurrent agents.</li>
+        <li><strong>Agentic LLM serving runtimes.</strong> A policy-driven runtime layer between
+          framework and engine that can observe, score, predict, and act on agent execution,
+          enabling caching, batch shaping, speculation, and safety policies that know what the
+          application is actually doing.</li>
+        <li><strong>Learning agent execution for KV-cache management.</strong> Inferring agent
+          transition structure online &mdash; no workflow graph, no offline training &mdash; and using
+          it to drive eviction, prefetching, compression, and tiering instead of recency
+          heuristics.</li>
       </ul>
     </div>
   </section>

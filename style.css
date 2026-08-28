@@ -227,6 +227,13 @@ p:last-child { margin-bottom: 0; }
 }
 .prose a { font-weight: 500; }
 
+.thesis {
+  border-left: 2px solid var(--accent);
+  padding: 2px 0 2px 20px;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
 .interests {
   list-style: none;
   padding: 0;
