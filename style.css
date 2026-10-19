@@ -712,3 +712,23 @@ footer {
 }
 
 .post-more { margin: 18px 0 0; font-size: 13.5px; font-weight: 600; }
+
+/* The home page shows a condensed version of the list; /blog/ stays roomy.
+   Clamping the blurb keeps entries the same height once there are several. */
+#blog .post-list { gap: 18px; }
+#blog .post-list li { grid-template-columns: 168px minmax(0, 1fr); gap: 16px; padding-bottom: 18px; }
+#blog .post-thumb { padding: 6px; border-radius: 7px; }
+#blog .post-link { font-size: 15px; }
+#blog .post-date { margin: 4px 0 6px; font-size: 12px; }
+#blog .post-blurb {
+  font-size: 13.5px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 560px) {
+  #blog .post-list li { grid-template-columns: 1fr; }
+}
