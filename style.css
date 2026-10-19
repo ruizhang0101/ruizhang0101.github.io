@@ -521,3 +521,167 @@ footer {
   .portrait { margin: 0 auto; }
   .socials { justify-content: center; }
 }
+
+/* ================================================================ blog === */
+
+/* The post pages drop the profile rail and run one wide column. */
+.shell--post { grid-template-columns: minmax(0, 1fr); max-width: 880px; }
+
+.post-head {
+  padding: 26px 30px 20px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--card-head);
+}
+
+.post-back { margin: 0 0 14px; font-size: 13px; }
+
+.post-head h1 {
+  font-family: var(--head);
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -.02em;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.post-meta {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  font-family: var(--mono);
+}
+
+.post-body { padding: 26px 30px 34px; font-size: 16.5px; line-height: 1.68; }
+
+.post-body h2 {
+  font-family: var(--head);
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.3;
+  margin: 38px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.post-body h3 {
+  font-family: var(--head);
+  font-size: 16.5px;
+  font-weight: 650;
+  margin: 28px 0 10px;
+  color: var(--ink);
+}
+
+.post-body p { margin: 0 0 15px; color: var(--ink-soft); }
+.post-body strong { color: var(--ink); font-weight: 700; }
+
+.post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 24px; }
+.post-body li { margin-bottom: 8px; color: var(--ink-soft); }
+.post-body li::marker { color: var(--ink-faint); }
+.post-body li > p { margin: 0 0 6px; }
+
+.post-body code {
+  font-family: var(--mono);
+  font-size: .87em;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: .08em .34em;
+  color: var(--ink);
+}
+
+.post-body pre {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 0 0 18px;
+}
+.post-body pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Tables can be wider than the column; scroll them rather than squeeze. */
+.table-wrap { overflow-x: auto; margin: 0 0 20px; }
+.post-body table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.post-body th, .post-body td {
+  border: 1px solid var(--rule);
+  padding: 8px 11px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink-soft);
+}
+.post-body th {
+  background: var(--card-head);
+  color: var(--ink);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ figures --- */
+
+.fig { margin: 24px 0; }
+.fig svg { width: 100%; height: auto; display: block; }
+
+.fig figcaption {
+  margin-top: 9px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* The diagrams come from Claude Docs and are drawn against its design
+   tokens; map those onto this site's palette so they follow light/dark. */
+:root {
+  --cds-text-primary:        var(--ink);
+  --cds-text-secondary:      var(--ink-faint);
+  --cds-chart-axis:          var(--ink-faint);
+  --cds-chart-grid:          var(--rule-strong);
+  --cds-chart-status-good:   var(--teal);
+  --cds-chart-status-warning: #c2710c;
+  --cds-chart-categorical-1: var(--link);
+  --cds-chart-reference-tint: var(--bg);
+  --cds-surface-primary:     var(--card);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --cds-chart-status-warning: #e8a33d; }
+}
+:root[data-theme="dark"] { --cds-chart-status-warning: #e8a33d; }
+
+/* --------------------------------------------------------- post list --- */
+
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.post-list li { padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+.post-list li:last-child { padding-bottom: 0; border-bottom: none; }
+
+.post-link {
+  font-family: var(--head);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.32;
+  color: var(--ink);
+}
+.post-link:hover { color: var(--link); }
+
+.post-date {
+  margin: 5px 0 7px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.post-blurb { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  .post-head { padding: 20px 18px 16px; }
+  .post-head h1 { font-size: 23px; }
+  .post-body { padding: 20px 18px 26px; font-size: 16px; }
+  .post-body h2 { font-size: 19px; }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Rui Zhang</title>
+<meta name="description" content="Writing on LLM serving systems and KV cache.">
+<meta name="author" content="Rui Zhang">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog — Rui Zhang">
+<meta property="og:description" content="Writing on LLM serving systems and KV cache.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Fira+Sans:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+</head>
+<body id="top">
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="/">Rui Zhang</a>
+    <div class="topnav-links">
+      <a href="/#about">About</a>
+      <a href="/#news">News</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#projects">Open Source</a>
+      <a href="/#publications">Publications</a>
+      <a href="/#services">Services</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell shell--post">
+  <main class="stack">
+    <section class="card">
+      <div class="card-head">
+        <svg viewBox="0 0 24 24"><path d="M4 4h13a3 3 0 0 1 3 3v11a2 2 0 0 1-2 2H5a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2zm2 4v2h9V8H6zm0 4v2h9v-2H6zm0 4v2h6v-2H6z"/></svg>
+        Blog
+      </div>
+      <div class="card-body">
+        <ul class="post-list">
+          <li>
+            <a class="post-link" href="/blog/lmcache-coordinator/">The LMCache Coordinator: a control plane for fleet-wide KV cache</a>
+            <p class="post-date"><time datetime="2026-10-09">9 October 2026</time></p>
+            <p class="post-blurb">LMCache's MP mode gives every node its own KV cache server, but each server sees only itself. The coordinator is the control plane that makes them act as one cache.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>© 2026 Rui Zhang</span>
+</footer>
+
+</body>
+</html>
